@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Crud</title>
+</head>
+<body>
+    
+    <div class="w-75 mx-auto py-5">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control border-0 border-bottom" id="productName" placeholder="name@example.com">
+            <label for="productName">Product Name :</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control border-0 border-bottom" id="productPrice" placeholder="name@example.com">
+            <label for="productPrice">Product Price :</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input list="category" type="text" class="form-control border-0 border-bottom" id="productCategory" placeholder="name@example.com">
+            <label for="productCategory">Product Category :</label>
+
+            <datalist id="category">
+                <option value="Tv"></option>
+                <option value="Mopile"></option>
+                <option value="Laptop"></option>
+                <option value="Screens"></option>
+                <option value="Electronics"></option>
+            </datalist>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea type="text" class="form-control border-0 border-bottom" id="productDescription" placeholder="name@example.com"></textarea>
+            <label for="productDescription">Product Description :</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="file" class="form-control border-0 border-bottom" id="productImage" placeholder="name@example.com">
+            <label for="productImage">Product Image :</label>
+        </div>
+
+        <button id="addBtn" onclick="addProduct()" class="btn btn-info text-white rounded-1">Add Product</button>
+        <button id="updateBtn" onclick="updateProduct()" class="btn btn-warning d-none text-white rounded-1">Update Product</button>
+
+    </div>
+
+    <div class="container">
+        <input id="searchInput" oninput="searchProducts()" placeholder="search by name....." type="text" class="form-control my-2">
+        <div id="rowData" class="row py-5">
+            
+
+        </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
