@@ -26,7 +26,7 @@ var product={
     price:productPriceInput.value,
     category:productCategoryInput.value,
     description:productDescriptionInput.value,
-    image:"image"
+    image:`images/${productImageInput.files[0]?.name}`
 }
 productsContainer.push(product);
 clearForm();
@@ -47,8 +47,8 @@ function displayProducts(){
     var cartona=``
     for (var i = 0; i < productsContainer.length; i++) {
         cartona +=`<div class="col-md-2 col-sm-6">
-                <div class="product">
-                    <img src="top-view-unrecognizable-hacker-performing-cyberattack-night.jpg" class="w-100" alt="product name">
+                <div class="product ">
+                    <img src="${productsContainer[i].image}" class="w-100" alt="product name">
                     <h2 class="h4">${productsContainer[i].code}</h2>
                     <p class="text-secondary mb-2">${productsContainer[i].description}</p>
                     <h3 class="h5"><span class="fw-bolder">Price :</span> ${productsContainer[i].price} </h3>
@@ -75,7 +75,7 @@ function searchProducts(term){
         if(productsContainer[i].code.toLowerCase().includes(term.toLowerCase()) == true){
                 cartona +=`<div class="col-md-2 col-sm-6">
                 <div class="product">
-                    <img src="top-view-unrecognizable-hacker-performing-cyberattack-night.jpg" class="w-100" alt="product name">
+                    <img src="${productsContainer[i].image}" class="w-100" alt="product name">
                     <h2 class="h4">${productsContainer[i].code}</h2>
                     <p class="text-secondary mb-2">${productsContainer[i].description}</p>
                     <h3 class="h5"><span class="fw-bolder">Price :</span> ${productsContainer[i].price} </h3>
